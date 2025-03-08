@@ -15,7 +15,7 @@ function About() {
             <div className="relative">
               <div className="absolute inset-0 bg-[#A78BFA] rounded-xl transform rotate-6"></div>
               <img
-                src="/profile-placeholder.jpg" // Replace with your actual image
+                src="/profile-img.jpeg" // Replace with your actual image
                 alt="Isra - Frontend Developer"
                 className="relative z-10 w-72 h-72 object-cover rounded-xl shadow-lg"
               />
