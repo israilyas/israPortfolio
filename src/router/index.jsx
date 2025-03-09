@@ -7,6 +7,7 @@ import SkillsPage from '../pages/SKillspage'
 import ProjectsPage from '../pages/Projectspage'
 import TestimonialsPage from '../pages/Testiminialspage'
 import ContactPage from '../pages/Contactpage'
+import Experience from '../pages/Experience'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 
 const router = createBrowserRouter(
@@ -23,7 +24,8 @@ const router = createBrowserRouter(
       <Route path="skills" element={<SkillsPage />} />
       <Route path="projects" element={<ProjectsPage />} />
       <Route path="testimonials" element={<TestimonialsPage />} />
-      <Route path="contact" element={<ContactPage />} />
+      <Route path="experience" element={<Experience />} />
+      <Route path="contact" element={<Experience />} />
     </Route>
   )
 )
