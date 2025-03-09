@@ -12,12 +12,6 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    // <Route path='/' element={<App />}>
-    //   <Route path='' element={<Home />} />
-    //   <Route path='about' element={<Home />} />
-    //   <Route path='projects' element={<Home />} />
-    //   <Route path='contact' element={<Home />} />
-    // </Route>
     <Route path="/" element={<App />}>
       <Route index element={<HomePage />} />
       <Route path="about" element={<AboutPage />} />
@@ -25,7 +19,7 @@ const router = createBrowserRouter(
       <Route path="projects" element={<ProjectsPage />} />
       <Route path="testimonials" element={<TestimonialsPage />} />
       <Route path="experience" element={<Experience />} />
-      <Route path="contact" element={<Experience />} />
+      <Route path="contact" element={<ContactPage />} />
     </Route>
   )
 )

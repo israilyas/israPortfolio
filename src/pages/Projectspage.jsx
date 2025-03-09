@@ -67,7 +67,7 @@ function ProjectsPage() {
       <Header />
       
       {/* Hero Section */}
-      <PageHero />
+      <PageHero headingWhite="My" headingPur="Project" desc="A collection of my recent web development projects, showcasing my skills in frontend technologies and responsive design." />
       
       {/* Projects Grid */}
       <section className="py-16">

@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'motion/react'
 
-const PageHero = () => {
+const PageHero = ({headingWhite, headingPur,desc}) => {
     return (
         <section className="relative py-20 bg-[#080810]">
             {/* Hero */}
@@ -12,10 +12,9 @@ const PageHero = () => {
                     transition={{ duration: 0.5 }}
                     className="text-center"
                 >
-                    <h1 className="text-4xl sm:text-5xl font-bold mb-4">My <span className="text-[#A78BFA]">Projects</span></h1>
+                    <h1 className="text-4xl sm:text-5xl font-bold mb-4 capitalize">{headingWhite} <span className="text-[#A78BFA]">{headingPur}</span></h1>
                     <p className="text-gray-400 max-w-2xl mx-auto">
-                        A collection of my recent web development projects, showcasing my skills
-                        in frontend technologies and responsive design.
+                        {desc}
                     </p>
                 </motion.div>
             </div>
