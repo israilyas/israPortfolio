@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope ,FaFacebook} from "react-icons/fa";
 
 const SocalLinks = () => {
     return (
@@ -17,7 +17,7 @@ const SocalLinks = () => {
 
             {/* LinkedIn */}
             <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://www.linkedin.com/in/isra-ilyas-qureshi-a88670264/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-[#141420] hover:bg-[#1F1F2E] transition-colors"
@@ -25,7 +25,16 @@ const SocalLinks = () => {
                 <FaLinkedin className="text-white text-xl" />
             </a>
 
-            {/* Twitter */}
+            <a
+                href="https://www.facebook.com/israilyas.qureshii"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-[#141420] hover:bg-[#1F1F2E] transition-colors"
+            >
+                <FaFacebook className="text-white text-xl" />
+            </a>
+
+            {/* Twitter
             <a
                 href="https://twitter.com/yourusername"
                 target="_blank"
@@ -33,7 +42,7 @@ const SocalLinks = () => {
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-[#141420] hover:bg-[#1F1F2E] transition-colors"
             >
                 <FaTwitter className="text-white text-xl" />
-            </a>
+            </a> */}
 
             {/* Internal Contact Link */}
             <Link

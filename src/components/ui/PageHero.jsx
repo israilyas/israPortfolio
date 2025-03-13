@@ -3,7 +3,7 @@ import { motion } from 'motion/react'
 
 const PageHero = ({headingWhite, headingPur,desc}) => {
     return (
-        <section className="relative py-20 bg-[#080810]">
+        <section className="relative py-20 bg-[#000319]">
             {/* Hero */}
             <div className="container mx-auto px-6">
                 <motion.div
