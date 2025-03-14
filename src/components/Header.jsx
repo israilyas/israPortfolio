@@ -148,7 +148,7 @@ function Header() {
               { name: 'About', path: '/about' },
               { name: 'Skills', path: '/skills' },
               { name: 'Projects', path: '/projects' },
-              { name: 'Testimonials', path: '/testimonials' },
+              { name: 'Experience', path: '/experience' },
               { name: 'Contact', path: '/contact' }
             ].map((item) => (
               <Link
@@ -187,7 +187,7 @@ function Header() {
                 { name: 'About', path: '/about' },
                 { name: 'Skills', path: '/skills' },
                 { name: 'Projects', path: '/projects' },
-                { name: 'Testimonials', path: '/testimonials' },
+                { name: 'Experience', path: '/experience' },
                 { name: 'Contact', path: '/contact' }
               ].map((item) => (
                 <Link

@@ -1,293 +1,247 @@
-// import React, { useState } from 'react';
-// import { motion } from 'motion/react';
-// import Header from '../components/Header';
+import React from 'react';
+import { motion } from 'framer-motion';
+import Header from '../components/Header';
+import PageHero from '../components/ui/PageHero';
+import CTA from '../components/ui/CTA';
 
-// function ExperiencePage() {
-//   const [activeTab, setActiveTab] = useState('work');
+// Components
+const ExperienceCard = ({ experience, index }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true }}
+      className="bg-[#141420] rounded-xl overflow-hidden shadow-xl p-6 relative"
+    >
+      <div className="flex flex-col md:flex-row md:items-start gap-4">
+        {/* Company Logo */}
+        <div className="flex-shrink-0 w-16 h-16 bg-[#1E1E2D] rounded-lg flex items-center justify-center overflow-hidden">
+          {experience.logo ? (
+            <img src={experience.logo} alt={`${experience.company} logo`} className="w-full h-full object-contain p-2" />
+          ) : (
+            <div className="text-[#A78BFA] text-xl font-bold">
+              {experience.company.charAt(0)}
+            </div>
+          )}
+        </div>
 
-//   const workExperience = [
-//     {
-//       company: "Tech Innovations Inc.",
-//       role: "Senior Frontend Developer",
-//       period: "Jan 2022 - Present",
-//       location: "Remote",
-//       description: "Leading frontend development for enterprise web applications using React, Next.js, and TypeScript.",
-//       achievements: [
-//         "Implemented a component library that reduced development time by 40%",
-//         "Improved application performance by 35% through code optimization",
-//         "Mentored junior developers and conducted code reviews",
-//         "Migrated legacy applications to modern React architecture"
-//       ]
-//     },
-//     // Other work experiences
-//   ];
+        {/* Experience Details */}
+        <div className="flex-1">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
+            <h3 className="text-xl font-semibold text-white">{experience.title}</h3>
+            <span className="text-[#A78BFA] text-sm font-medium">{experience.period}</span>
+          </div>
+          
+          <h4 className="text-gray-300 mb-3">{experience.company}</h4>
+          
+          <p className="text-gray-400 text-sm mb-4">{experience.description}</p>
+          
+          <div className="flex flex-wrap gap-2">
+            {experience.skills.map((skill, i) => (
+              <span key={i} className="text-xs bg-[#1E1E2D] px-2 py-1 rounded-md text-[#A78BFA]">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
 
-//   const education = [
-//     {
-//       institution: "University of Technology",
-//       degree: "Bachelor of Science in Computer Science",
-//       period: "2014 - 2018",
-//       location: "Boston, MA",
-//       description: "Focused on web development, algorithms, and software engineering principles.",
-//       achievements: [
-//         "GPA: 3.8/4.0",
-//         "Dean's List: 7 semesters",
-//         "Senior project: Developed an e-learning platform",
-//         "Vice President of Computer Science Student Association"
-//       ]
-//     },
-//     // Other education entries
-//   ];
-
-//   const certifications = [
-//     {
-//       title: "AWS Certified Developer - Associate",
-//       issuer: "Amazon Web Services",
-//       date: "2023",
-//       id: "AWS-DEV-12345"
-//     },
-//     // Other certifications
-//   ];
-
-//   const renderContent = () => {
-//     switch (activeTab) {
-//       case 'work':
-//         return workExperience.map((job, index) => (
-//           <div key={index} className="mb-6">
-//             <h3 className="text-xl font-semibold text-[#A78BFA]">{job.role} at {job.company}</h3>
-//             <p className="text-gray-400">{job.period} | {job.location}</p>
-//             <p className="mt-2">{job.description}</p>
-//             <ul className="list-disc list-inside mt-2">
-//               {job.achievements.map((achievement, i) => (
-//                 <li key={i} className="text-gray-300">{achievement}</li>
-//               ))}
-//             </ul>
-//           </div>
-//         ));
-//       case 'education':
-//         return education.map((edu, index) => (
-//           <div key={index} className="mb-6">
-//             <h3 className="text-xl font-semibold text-[#A78BFA]">{edu.degree}</h3>
-//             <p className="text-gray-400">{edu.period} | {edu.location}</p>
-//             <p className="mt-2">{edu.description}</p>
-//             <ul className="list-disc list-inside mt-2">
-//               {edu.achievements.map((achievement, i) => (
-//                 <li key={i} className="text-gray-300">{achievement}</li>
-//               ))}
-//             </ul>
-//           </div>
-//         ));
-//       case 'certifications':
-//         return certifications.map((cert, index) => (
-//           <div key={index} className="mb-6">
-//             <h3 className="text-xl font-semibold text-[#A78BFA]">{cert.title}</h3>
-//             <p className="text-gray-400">{cert.issuer} | {cert.date}</p>
-//             <p className="mt-2">Certification ID: {cert.id}</p>
-//           </div>
-//         ));
-//       default:
-//         return null;
-//     }
-//   };
-
-//   return (
-//     <div className="bg-[#000319] text-white min-h-screen">
-//       <Header />
-
-//       <section className="relative py-20 bg-[#080810] text-center">
-//         <motion.div
-//           initial={{ opacity: 0, y: 20 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.5 }}
-//         >
-//           <h1 className="text-4xl sm:text-5xl font-bold mb-4">My <span className="text-[#A78BFA]">Experience</span></h1>
-//           <p className="text-gray-400 max-w-2xl mx-auto">
-//             A timeline of my professional journey, education, and certifications.
-//           </p>
-//         </motion.div>
-//       </section>
-
-//       <div className="container mx-auto px-6 py-10">
-//         <div className="flex justify-center space-x-6 mb-6">
-//           {['work', 'education', 'certifications'].map((tab) => (
-//             <button
-//               key={tab}
-//               className={`px-6 py-2 rounded-lg text-lg font-semibold transition duration-300 ${
-//                 activeTab === tab ? 'bg-[#A78BFA] text-white' : 'bg-gray-700 text-gray-300'
-//               }`}
-//               onClick={() => setActiveTab(tab)}
-//             >
-//               {tab.charAt(0).toUpperCase() + tab.slice(1)}
-//             </button>
-//           ))}
-//         </div>
-//         <div>{renderContent()}</div>
-//       </div>
-
-//     </div>
-//   );
-// }
-
-// export default ExperiencePage;
-
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import Header from "../components/Header";
+const SkillCategory = ({ category, skills, index }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true }}
+      className="bg-[#141420] rounded-xl overflow-hidden shadow-xl p-6"
+    >
+      <h3 className="text-xl font-semibold mb-4">{category}</h3>
+      <div className="flex flex-wrap gap-3">
+        {skills.map((skill, i) => (
+          <motion.div
+            key={i}
+            whileHover={{ y: -5 }}
+            className="bg-[#1E1E2D] px-4 py-3 rounded-lg"
+          >
+            <span className="text-[#A78BFA] font-medium">{skill}</span>
+          </motion.div>
+        ))}
+      </div>
+    </motion.div>
+  );
+};
 
 function ExperiencePage() {
-  const [activeTab, setActiveTab] = useState("work");
-
-  const workExperience = [
+  // Experience data array
+  const experiences = [
     {
-      company: "Tech Innovations Inc.",
-      role: "Senior Frontend Developer",
-      period: "Jan 2022 - Present",
-      location: "Remote",
-      description:
-        "Leading frontend development for enterprise web applications using React, Next.js, and TypeScript.",
-      achievements: [
-        "Implemented a component library that reduced development time by 40%",
-        "Improved application performance by 35% through code optimization",
-        "Mentored junior developers and conducted code reviews",
-        "Migrated legacy applications to modern React architecture",
-      ],
+      id: 1,
+      title: "Senior Frontend Developer",
+      company: "TechVision Inc.",
+      period: "2021 - Present",
+      description: "Leading the frontend development team in building responsive web applications with modern JavaScript frameworks. Implemented CI/CD pipelines and improved page load performance by 40%.",
+      skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "CI/CD"],
+      logo: "/logos/techvision.png"
+    },
+    {
+      id: 2,
+      title: "Frontend Developer",
+      company: "WebSolutions Ltd.",
+      period: "2019 - 2021",
+      description: "Developed and maintained multiple client websites and web applications. Collaborated with designers to implement responsive UI components and interactive features.",
+      skills: ["JavaScript", "React", "CSS3", "SCSS", "RESTful APIs"],
+      logo: "/logos/websolutions.png"
+    },
+    {
+      id: 3,
+      title: "Web Developer Intern",
+      company: "DigitalCraft Agency",
+      period: "2018 - 2019",
+      description: "Assisted in the development of client websites. Learned modern web development practices and collaborated in an agile team environment.",
+      skills: ["HTML5", "CSS3", "JavaScript", "WordPress", "Git"],
+      logo: "/logos/digitalcraft.png"
     },
   ];
 
-  const education = [
+  // Skills data
+  const skillCategories = [
     {
-      institution: "University of Technology",
-      degree: "B.Sc. in Computer Science",
-      period: "2014 - 2018",
-      location: "Boston, MA",
-      description:
-        "Focused on web development, algorithms, and software engineering principles.",
-      achievements: [
-        "GPA: 3.8/4.0",
-        "Dean's List: 7 semesters",
-        "Senior project: Developed an e-learning platform",
-        "Vice President of Computer Science Student Association",
-      ],
+      category: "Frontend",
+      skills: ["React", "Next.js", "Vue.js", "HTML5", "CSS3/SCSS", "JavaScript", "TypeScript", "Tailwind CSS", "Framer Motion"]
     },
-  ];
-
-  const certifications = [
     {
-      title: "AWS Certified Developer - Associate",
-      issuer: "Amazon Web Services",
-      date: "2023",
-      id: "AWS-DEV-12345",
+      category: "Backend",
+      skills: ["Node.js", "Express", "MongoDB", "Firebase", "RESTful APIs", "GraphQL"]
     },
-  ];
-
-  const renderContent = () => {
-    switch (activeTab) {
-      case "work":
-        return workExperience.map((job, index) => (
-          <motion.div
-            key={index}
-            className="bg-[#111827] p-6 rounded-xl shadow-md hover:shadow-lg transition"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-          >
-            <h3 className="text-2xl font-semibold text-[#A78BFA]">
-              {job.role} at {job.company}
-            </h3>
-            <p className="text-gray-400 mt-1">{job.period} | {job.location}</p>
-            <p className="mt-3 text-gray-300">{job.description}</p>
-            <ul className="mt-3 space-y-2">
-              {job.achievements.map((achievement, i) => (
-                <li key={i} className="text-gray-400">
-                  ✅ {achievement}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        ));
-      case "education":
-        return education.map((edu, index) => (
-          <motion.div
-            key={index}
-            className="bg-[#111827] p-6 rounded-xl shadow-md hover:shadow-lg transition"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-          >
-            <h3 className="text-2xl font-semibold text-[#A78BFA]">{edu.degree}</h3>
-            <p className="text-gray-400 mt-1">{edu.period} | {edu.location}</p>
-            <p className="mt-3 text-gray-300">{edu.description}</p>
-            <ul className="mt-3 space-y-2">
-              {edu.achievements.map((achievement, i) => (
-                <li key={i} className="text-gray-400">🎓 {achievement}</li>
-              ))}
-            </ul>
-          </motion.div>
-        ));
-      case "certifications":
-        return certifications.map((cert, index) => (
-          <motion.div
-            key={index}
-            className="bg-[#111827] p-6 rounded-xl shadow-md hover:shadow-lg transition"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-          >
-            <h3 className="text-2xl font-semibold text-[#A78BFA]">{cert.title}</h3>
-            <p className="text-gray-400 mt-1">{cert.issuer} | {cert.date}</p>
-            <p className="mt-3 text-gray-300">Certification ID: {cert.id}</p>
-          </motion.div>
-        ));
-      default:
-        return null;
+    {
+      category: "Tools & Others",
+      skills: ["Git", "GitHub", "VS Code", "Figma", "Jest", "Webpack", "CI/CD", "AWS", "Vercel", "Netlify"]
     }
-  };
+  ];
 
   return (
     <div className="bg-[#000319] text-white min-h-screen">
       <Header />
-
+      
       {/* Hero Section */}
-      <section className="relative py-20 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h1 className="text-5xl font-bold">
-            My <span className="text-[#A78BFA]">Experience</span>
-          </h1>
-          <p className="text-gray-400 max-w-2xl mx-auto mt-3">
-            A journey through my professional work, education, and certifications.
-          </p>
-        </motion.div>
-      </section>
-
-      {/* Tab Navigation */}
-      <div className="container mx-auto px-6 py-10">
-        <div className="flex justify-center space-x-6 mb-10">
-          {["work", "education", "certifications"].map((tab) => (
-            <motion.button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-8 py-3 rounded-xl text-lg font-semibold transition duration-300 ${
-                activeTab === tab
-                  ? "bg-[#A78BFA] text-white shadow-md"
-                  : "bg-gray-700 text-gray-300 hover:bg-gray-600"
-              }`}
-              whileHover={{ scale: 1.05 }}
-            >
-              {tab.charAt(0).toUpperCase() + tab.slice(1)}
-            </motion.button>
-          ))}
+      <PageHero 
+        headingWhite="My" 
+        headingPur="Experience" 
+        desc="A showcase of my professional journey, skills, and expertise in web development and design." 
+      />
+      
+      {/* Timeline Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-6">
+          <motion.h2 
+            className="text-3xl font-bold mb-10 text-center"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            Professional <span className="text-[#A78BFA]">Journey</span>
+          </motion.h2>
+          
+          <div className="space-y-6 relative">
+            {/* Timeline line */}
+            <div className="hidden md:block absolute left-[7.5rem] top-12 bottom-0 w-0.5 bg-[#A78BFA] opacity-30"></div>
+            
+            {/* Experience Cards */}
+            {experiences.map((experience, index) => (
+              <ExperienceCard key={experience.id} experience={experience} index={index} />
+            ))}
+          </div>
         </div>
-
-        {/* Content Section */}
-        <div className="grid md:grid-cols-2 gap-6">{renderContent()}</div>
-      </div>
+      </section>
+      
+      {/* Skills Section */}
+      <section className="py-16 bg-[#000319]/50">
+        <div className="container mx-auto px-6">
+          <motion.h2 
+            className="text-3xl font-bold mb-10 text-center"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            Technical <span className="text-[#A78BFA]">Skills</span>
+          </motion.h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {skillCategories.map((category, index) => (
+              <SkillCategory 
+                key={index}
+                category={category.category} 
+                skills={category.skills}
+                index={index}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Education Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-6">
+          <motion.h2 
+            className="text-3xl font-bold mb-10 text-center"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            Education & <span className="text-[#A78BFA]">Certifications</span>
+          </motion.h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="bg-[#141420] rounded-xl overflow-hidden shadow-xl p-6"
+            >
+              <h3 className="text-xl font-semibold mb-2">Bachelor of Science in Computer Science</h3>
+              <h4 className="text-gray-300 mb-3">University of Technology</h4>
+              <p className="text-[#A78BFA] text-sm font-medium mb-4">2015 - 2019</p>
+              <p className="text-gray-400 text-sm">Specialized in Web Development and Software Engineering. Graduated with honors.</p>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-[#141420] rounded-xl overflow-hidden shadow-xl p-6"
+            >
+              <h3 className="text-xl font-semibold mb-4">Certifications</h3>
+              <ul className="space-y-3">
+                <li className="pb-3 border-b border-[#1E1E2D]">
+                  <h4 className="font-medium">AWS Certified Developer</h4>
+                  <p className="text-gray-400 text-sm">Amazon Web Services • 2022</p>
+                </li>
+                <li className="pb-3 border-b border-[#1E1E2D]">
+                  <h4 className="font-medium">React Certification</h4>
+                  <p className="text-gray-400 text-sm">Meta (Facebook) • 2021</p>
+                </li>
+                <li>
+                  <h4 className="font-medium">Google UX Design Professional Certificate</h4>
+                  <p className="text-gray-400 text-sm">Google • 2020</p>
+                </li>
+              </ul>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Call to Action */}
+      <CTA />
     </div>
   );
 }
 
 export default ExperiencePage;
-
