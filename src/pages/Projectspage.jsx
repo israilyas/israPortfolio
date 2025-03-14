@@ -16,7 +16,6 @@ function ProjectsPage() {
       image: "/projects/ecommerce.jpg",
       tags: ["Next.js", "Tailwind CSS","Swiper.js"],
       demoUrl: "https://ecommerce-demo.isra.dev",
-      codeUrl: "https://github.com/isradev/ecommerce-platform",
       thumbnail: "./Banners/payshift.png",  
       videoUrl: "/Videos/PayShift.mp4"  
     },
@@ -27,7 +26,9 @@ function ProjectsPage() {
       image: "/projects/dashboard.jpg",
       tags: ["React", "D3.js", "Redux", "Material UI"],
       thumbnail: "./Banners/passwordGenerator.png",  
-      videoUrl: "/Videos/PasswordGeneratory.mp4"  
+      videoUrl: "/Videos/PasswordGenerator.mp4"  ,
+      demoUrl: "https://ecommerce-demo.isra.dev",
+      codeUrl: "https://github.com/isradev/ecommerce-platform",
     },
     {
       id: 3,
@@ -36,7 +37,9 @@ function ProjectsPage() {
       image: "/projects/travel-blog.jpg",
       tags: ["React"],
       thumbnail: "./Banners/currencyConverter.png",  
-      videoUrl: "/Videos/CurrencyConverter.mp4"  
+      videoUrl: "/Videos/CurrencyConverter.mp4",
+      demoUrl: "https://ecommerce-demo.isra.dev",
+      codeUrl: "https://github.com/isradev/ecommerce-platform", 
     },
     {
       id: 4,
@@ -45,7 +48,9 @@ function ProjectsPage() {
       image: "/projects/weather-app.jpg",
       tags: ["React", "OpenWeather API", "Geolocation", "CSS"],
       thumbnail: "./Banners/ReactRouterProject.png",  
-      videoUrl: "/Videos/reactRouterProject.mp4"  
+      videoUrl: "/Videos/reactRouterProject.mp4",
+      demoUrl: "https://ecommerce-demo.isra.dev",
+      codeUrl: "https://github.com/isradev/ecommerce-platform",  
     },
   ];
 
