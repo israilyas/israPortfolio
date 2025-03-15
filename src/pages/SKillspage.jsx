@@ -8,15 +8,15 @@ import PageHero from '../components/ui/PageHero';
 function SkillsPage() {
   // Technical skills data
   const technicalSkills = [
-    { name: "React", level: 90, icon: "react" },
-    { name: "Next.js", level: 85, icon: "nextjs" },
-    { name: "JavaScript", level: 90, icon: "javascript" },
-    { name: "TypeScript", level: 80, icon: "typescript" },
+    { name: "React", level: 70, icon: "react" },
+    { name: "Next.js", level: 70, icon: "nextjs" },
+    { name: "JavaScript", level: 70, icon: "javascript" },
+    { name: "TypeScript", level: 50, icon: "typescript" },
     { name: "Tailwind CSS", level: 85, icon: "tailwind" },
     { name: "HTML5", level: 95, icon: "html5" },
     { name: "CSS3", level: 90, icon: "css3" },
-    { name: "Redux", level: 75, icon: "redux" },
-    { name: "SASS/SCSS", level: 80, icon: "sass" },
+    // { name: "Redux", level: 75, icon: "redux" },
+    // { name: "SASS/SCSS", level: 80, icon: "sass" },
     { name: "Git", level: 85, icon: "git" },
     { name: "Responsive Design", level: 90, icon: "responsive" },
     { name: "API Integration", level: 85, icon: "api" }
@@ -85,16 +85,16 @@ function SkillsPage() {
   const toolCategories = [
     {
       title: "Development",
-      tools: ["VS Code", "WebStorm", "GitHub", "GitLab", "Terminal"]
+      tools: ["VS Code", "GitHub", "Terminal"]
     },
     {
       title: "Design",
-      tools: ["Figma", "Adobe XD", "Photoshop", "Illustrator"]
+      tools: ["Figma"]
     },
-    {
-      title: "Project Management",
-      tools: ["Jira", "Trello", "Asana", "Notion"]
-    },
+    // {
+    //   title: "Project Management",
+    //   tools: ["Jira", "Trello", "Asana", "Notion"]
+    // },
     {
       title: "Communication",
       tools: ["Slack", "Discord", "Zoom", "Microsoft Teams"]
@@ -104,11 +104,11 @@ function SkillsPage() {
   return (
     <div className="bg-[#000319] text-white min-h-screen">
       <Header />
-      
+
       {/* Hero Section */}
       <PageHero headingWhite="my" headingPur="skills" desc=" A comprehensive overview of my technical expertise, tools, and soft skills
               that I bring to every project." />
-      
+
       {/* Technical Skills Section */}
       <section className="py-16">
         <div className="container mx-auto px-6">
@@ -124,7 +124,7 @@ function SkillsPage() {
               Core technologies and programming languages I work with regularly.
             </p>
           </motion.div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {technicalSkills.map((skill, index) => (
               <motion.div
@@ -144,9 +144,9 @@ function SkillsPage() {
                   </div>
                   <span className="text-sm text-[#A78BFA]">{skill.level}%</span>
                 </div>
-                
+
                 <div className="w-full bg-[#1E1E2D] rounded-full h-2.5">
-                  <motion.div 
+                  <motion.div
                     className="bg-[#A78BFA] h-2.5 rounded-full"
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.level}%` }}
@@ -159,7 +159,7 @@ function SkillsPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Soft Skills Section */}
       <section className="py-16 bg-[#080810]">
         <div className="container mx-auto px-6">
@@ -175,7 +175,7 @@ function SkillsPage() {
               Beyond technical abilities, these interpersonal skills help me collaborate effectively.
             </p>
           </motion.div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {softSkills.map((skill, index) => (
               <motion.div
@@ -199,7 +199,7 @@ function SkillsPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Tools & Software Section */}
       <section className="py-16">
         <div className="container mx-auto px-6">
@@ -215,7 +215,7 @@ function SkillsPage() {
               Applications and platforms I use to streamline my development workflow.
             </p>
           </motion.div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {toolCategories.map((category, index) => (
               <motion.div
@@ -229,7 +229,7 @@ function SkillsPage() {
                 <h3 className="text-lg font-semibold mb-4 text-[#A78BFA]">{category.title}</h3>
                 <div className="flex flex-wrap gap-2">
                   {category.tools.map((tool) => (
-                    <span 
+                    <span
                       key={tool}
                       className="px-3 py-1 bg-[#1E1E2D] rounded-full text-sm"
                     >
@@ -242,9 +242,9 @@ function SkillsPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Learning Section */}
-      <section className="py-16 bg-gradient-to-r from-[#141420] to-[#1E1E2D]">
+      {/* <section className="py-16 bg-gradient-to-r from-[#141420] to-[#1E1E2D]">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -258,9 +258,9 @@ function SkillsPage() {
               I'm always expanding my skill set. Here's what I'm currently focused on learning.
             </p>
           </motion.div>
-          
+
           <div className="flex flex-wrap justify-center gap-4">
-            {["GraphQL", "Three.js", "Web3", "Blockchain Development", "AWS"].map((skill, index) => (
+            {["Node js",""].map((skill, index) => (
               <motion.div
                 key={skill}
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -274,8 +274,8 @@ function SkillsPage() {
             ))}
           </div>
         </div>
-      </section>
-      
+      </section> */}
+
     </div>
   );
 }
