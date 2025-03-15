@@ -66,7 +66,7 @@ function AboutPage() {
 
             <a
             download
-              href="/RESUME.pdf"
+              href="/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-6 py-3 bg-[#1F1F2E] text-white rounded-lg font-medium hover:bg-[#2A2A3D] transition-colors"
