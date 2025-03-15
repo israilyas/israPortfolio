@@ -149,7 +149,7 @@ const VideoModal = ({ isOpen, videoUrl, onClose, project }) => {
                             initial="hidden"
                             animate="visible"
                             className="flex flex-col gap-4 p-6 md:p-8 md:w-[40%]  w-full max-h-[90vh] overflow-y-auto relative
-                            scrollbar-thin scrollbar-thumb-[#A78BFA]/40 scrollbar-track-[#1E1E2D] hover:scrollbar-thumb-[#A78BFA] bg-gradient-to-r from-[#2c2c40] to-[#332f45] hover:from-[#3e3e55] hover:to-[#4a4161]"
+                            scrollbar-thin scrollbar-thumb-[#A78BFA]/40 scrollbar-track-[#1E1E2D] hover:scrollbar-thumb-[#A78BFA] bg-gradient-to-r from-[#2c2c40] to-[#332f45] hover:from-[#323245] hover:to-[#4a4161]"
                         >
                             {/* Title with glow effect */}
                             <motion.h1
@@ -191,19 +191,20 @@ const VideoModal = ({ isOpen, videoUrl, onClose, project }) => {
                                 className="mt-4"
                             >
                                 {
-                                    project.techStack ? (
+                                    project.features ? (
                                         <>
-                                            <h2 className="text-lg font-semibold mb-3 text-[#A78BFA] flex items-center gap-2">
-                                                <span className="h-1 w-4 rounded-full inline-block"></span>
-                                                Tech Stack
+                                            <h2 className="text-lg font-semibold mb-3 text-[#A78BFA] flex items-center gap-2 capitalize">
+                                                <span className="h-1 w-4 rounded-full inline-block "></span>
+                                                Key features
                                             </h2>
                                             <ul className="space-y-2 list-disc list-inside pl-1">
-                                                {project?.techStack?.map((item, index) => (
+                                                {project?.features?.map((item, index) => (
                                                     <li
                                                         key={index}
                                                         className="text-gray-300 text-sm"
                                                     >
-                                                        {item}
+                                                        <span className="font-semibold text-white">{item.heading} : </span>
+                                                        <span>{item.desc}</span>
                                                     </li>
                                                 ))}
                                             </ul>
@@ -223,7 +224,7 @@ const VideoModal = ({ isOpen, videoUrl, onClose, project }) => {
                                             href={project.demoUrl}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="px-4 py-2.5 bg-gradient-to-r from-[#A78BFA] to-[#9B7DE3] text-white rounded-lg font-medium text-center hover:from-[#B89BFF] hover:to-[#A78BFA] transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#A78BFA]/20"
+                                            className="px-4 py-2.5 bg-gradient-to-r from-[#4c416b] to-[#9B7DE3] text-white rounded-lg font-medium text-center hover:from-[#B89BFF] hover:to-[#A78BFA] transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#A78BFA]/20"
                                             whileHover={{ scale: 1.03, y: -2 }}
                                             whileTap={{ scale: 0.97 }}
                                         >
