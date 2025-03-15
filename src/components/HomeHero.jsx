@@ -18,7 +18,7 @@ function HomeHero() {
           className="absolute w-full h-full object-cover"
         ></video>
         {/* Black overlay with 0.5 opacity */}
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="absolute inset-0 bg-black opacity-20"></div>
       </div>
 
       <div className="relative z-10 min-h-screen flex flex-col">
