@@ -70,8 +70,8 @@ function ProjectsPage() {
       tags: ["React.js", "Tailwind CSS", "React Hooks"],
       thumbnail: "./Banners/passwordGenerator.png",
       videoUrl: "https://streamable.com/3m446v",
-      demoUrl: "https://streamable.com/3m446v",
-      codeUrl: "https://github.com/isradev/ecommerce-platform",
+      demoUrl: "https://react-js-2025.vercel.app/",
+      codeUrl: "https://github.com/israilyas/React-JS-2025/tree/main/05passwordGenerator",
     },
     {
       id: 4,
