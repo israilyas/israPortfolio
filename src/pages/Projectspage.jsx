@@ -95,7 +95,7 @@ function ProjectsPage() {
           desc: "Utilizes React Hooks for smooth updates and state management."
         },
       ],
-      tags: ["React","Tailwind CSS", "API Integration"],
+      tags: ["React", "Tailwind CSS", "API Integration"],
       thumbnail: "./Banners/currencyConverter.png",
       videoUrl: "https://streamable.com/lpupz6",
       demoUrl: "https://currency-converter-reactjs-ebon.vercel.app/",
@@ -231,7 +231,7 @@ function ProjectsPage() {
           heading: "User-Friendly UI",
           desc: "Clean and responsive design for a smooth experience."
         },
-      
+
       ],
 
       tags: ["HTML5", "CSS3", "JavaScript"],
@@ -257,7 +257,7 @@ function ProjectsPage() {
           heading: "User-Friendly Interface ",
           desc: "Simple, clean, and responsive design."
         },
-      
+
       ],
 
       tags: ["HTML5", "CSS3", "JavaScript"],
@@ -267,32 +267,7 @@ function ProjectsPage() {
       codeUrl: "https://github.com/israilyas/BMI-Calculator-JS",
     },
 
-    {
-      id: 11,
-      title: "Personal Portfolio Website",
-      shortDesc: "I designed and developed my portfolio website using HTML, CSS, and JavaScript to showcase my skills, projects, and services in a professional and visually appealing way.",
-      features: [
-        {
-          heading: "Modern & Responsive Design",
-          desc: "Ensures a seamless experience across all devices."
-        },
-        {
-          heading: "Interactive Navigation",
-          desc: "Smooth scrolling and user-friendly layout."
-        },
-        {
-          heading: "Project Showcase",
-          desc: "Displays my key development projects effectively."
-        },
-      
-      ],
 
-      tags: ["HTML5", "CSS3", "JavaScript"],
-      thumbnail: "./Banners/portfolio1.png",
-      videoUrl: "https://streamable.com/d7dq4w",
-      demoUrl: "https://isra-ilyas.netlify.app/",
-      // codeUrl: "https://github.com/israilyas/BMI-Calculator-JS",
-    },
   ];
 
   return (
