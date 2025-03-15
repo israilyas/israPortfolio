@@ -22,7 +22,7 @@ function ProjectsPage() {
       videoUrl: "https://streamable.com/hr77eh"
     },
     {
-      id: 1,
+      id: 2,
       title: "PaySHift Website",
       description: "A fully responsive e-commerce website built with React, Next.js, and Stripe integration for secure payments.",
       image: "/projects/ecommerce.jpg",
@@ -32,7 +32,7 @@ function ProjectsPage() {
       videoUrl: "/Videos/PayShift.mp4"
     },
     {
-      id: 2,
+      id: 3,
       title: "Password Generator",
       description: "An admin dashboard with data visualization and user management features. Built with React and D3.js.",
       image: "/projects/dashboard.jpg",
@@ -43,7 +43,7 @@ function ProjectsPage() {
       codeUrl: "https://github.com/isradev/ecommerce-platform",
     },
     {
-      id: 3,
+      id: 4,
       title: "Currency Converter",
       description: "A travel blog with CMS integration allowing content creators to manage posts and media easily.",
       image: "/projects/travel-blog.jpg",
@@ -54,7 +54,7 @@ function ProjectsPage() {
       codeUrl: "https://github.com/isradev/ecommerce-platform",
     },
     {
-      id: 4,
+      id: 5,
       title: "Weather App",
       description: "Real-time weather application with location detection and 7-day forecast using OpenWeather API.",
       image: "/projects/weather-app.jpg",
