@@ -1,5 +1,5 @@
 import React from 'react'
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 const ExperienceCard = ({ experience, index }) => {
     return (
@@ -14,7 +14,7 @@ const ExperienceCard = ({ experience, index }) => {
                 {/* Company Logo */}
                 <div className="flex-shrink-0 w-16 h-16 bg-[#1E1E2D] rounded-lg flex items-center justify-center overflow-hidden">
                     {experience.logo ? (
-                        <img src={experience.logo} alt={`${experience.company} logo`} className="w-full h-full object-contain p-2" />
+                        <img src={experience.logo} alt={`${experience.company} logo`} className="w-full h-full object-contain" />
                     ) : (
                         <div className="text-[#A78BFA] text-xl font-bold">
                             {experience.company.charAt(0)}

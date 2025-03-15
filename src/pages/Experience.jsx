@@ -16,7 +16,7 @@ function ExperiencePage() {
       period: "Nov 2024 - Present",
       description: "Developed and maintained multiple client websites and web applications. Collaborated with backend developer and designers to implement responsive UI components and interactive features.",
       skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Wordpress"],
-      logo: "/logos/techvision.png"
+      logo: "/CompanyLogo/anclogo1.jpeg"
     },
     // {
     //   id: 2,
