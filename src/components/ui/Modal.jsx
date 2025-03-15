@@ -61,7 +61,7 @@ const VideoModal = ({ isOpen, videoUrl, onClose, project }) => {
         <Modal
             isOpen={open}
             onRequestClose={handleClose}
-            className="w-full overflow-y-auto max-h-[90vh] sm:w-[95%] md:w-[90%] lg:w-[85%] xl:w-[80%] max-w-5xl bg-gradient-to-br from-[#1E1E2D] to-[#252538] text-white rounded-xl overflow-hidden relative z-50 border border-[#A78BFA]/20 shadow-2xl"
+            className="w-full overflow-y-auto max-h-[90vh] sm:w-[95%] md:w-[90%] lg:w-[85%] xl:w-[80%] max-w-5xl bg-gradient-to-br from-[#1E1E2D] to-[#252538] text-white rounded-xl md:overflow-hidden relative z-50 border border-[#A78BFA]/20 shadow-2xl"
             overlayClassName="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 z-30"
             closeTimeoutMS={300}
         >
