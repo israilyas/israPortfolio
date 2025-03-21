@@ -10,6 +10,31 @@ function ProjectsPage() {
   // Project data array
   const projects = [
     {
+      id: 11,
+      title: "Tolemaica - Certified Media Protection Website",
+      shortDesc: "Developed a fast, modern, and responsive website for Tolemaica, an Italian startup specializing in legal certification of media. The site enhances user experience with seamless navigation and an intuitive UI.",
+      features: [
+        {
+          heading: "Instant BMI Calculation ",
+          desc: "Enter height and weight to get results immediately."
+        },
+        {
+          heading: "Personalized Feedback",
+          desc: "Displays BMI category (Underweight, Normal, Overweight, Obese)."
+        },
+        {
+          heading: "User-Friendly Interface ",
+          desc: "Simple, clean, and responsive design."
+        },
+
+      ],
+
+      tags: ["HTML5", "CSS3", "JavaScript"],
+      thumbnail: "./Banners/tolemaica.png",
+      demoUrl: "https://bmi-calculator-by-isra.netlify.app/",
+    },
+
+    {
       id: 1,
       title: "Anita AI: The Future of AI-Powered Crypto Influence",
       shortDesc: "Anita AI is a cutting-edge AI-powered crypto influencer designed to redefine digital influence in the blockchain space. Built using Next.js, this fast, scalable, and interactive website showcases Anita AI's mission to bridge the gap between AI, crypto, and metaverse culture.",
@@ -266,8 +291,6 @@ function ProjectsPage() {
       demoUrl: "https://bmi-calculator-by-isra.netlify.app/",
       codeUrl: "https://github.com/israilyas/BMI-Calculator-JS",
     },
-
-
   ];
 
   return (
