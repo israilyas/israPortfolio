@@ -1,44 +1,65 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import Header from '../components/Header';
-import PageHero from '../components/ui/PageHero'
-import { div } from 'motion/react-client';
+import PageHero from '../components/ui/PageHero';
 import ProjectCard from '../components/ui/ProjectCard';
 import CTA from '../components/ui/CTA';
 
 function ProjectsPage() {
-  // Project data array
+  // Expanded project categories
+  const categories = [
+    { id: 'all', name: 'All Projects' },
+    { id: 'client', name: 'Client Work' },
+    { id: 'react', name: 'React Projects' },
+    { id: 'nextjs', name: 'Next.js Projects' },
+    { id: 'ui-design', name: 'UI Design' },
+    { id: 'web-apps', name: 'Web Applications' },
+    { id: 'personal', name: 'Personal Projects' },
+    { id: 'mini', name: 'Mini Projects' },
+    { id: 'javascript', name: 'JavaScript Projects' },
+    { id: 'interactive', name: 'Interactive Tools' },
+    { id: 'games', name: 'Games' },
+    { id: 'practice', name: 'Practice Projects' }
+  ];
+
+  // State for active category and mobile menu visibility
+  const [activeCategory, setActiveCategory] = useState('all');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check screen size for responsive design
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Initial check
+    checkScreenSize();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', checkScreenSize);
+    
+    // Clean up
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
+  // Project data array with updated categories
   const projects = [
     {
       id: 11,
       title: "Tolemaica - Certified Media Protection Website",
       shortDesc: "Developed a fast, modern, and responsive website for Tolemaica, an Italian startup specializing in legal certification of media. The site enhances user experience with seamless navigation and an intuitive UI.",
-      features: [
-        {
-          heading: "Instant BMI Calculation ",
-          desc: "Enter height and weight to get results immediately."
-        },
-        {
-          heading: "Personalized Feedback",
-          desc: "Displays BMI category (Underweight, Normal, Overweight, Obese)."
-        },
-        {
-          heading: "User-Friendly Interface ",
-          desc: "Simple, clean, and responsive design."
-        },
-
-      ],
-
-      tags: ["HTML5", "CSS3", "JavaScript"],
+      categories: ['client', 'ui-design'],
+      tags: ["React", "Tailwind", "Swiper.js"],
       thumbnail: "./Banners/tolemaica.png",
-      demoUrl: "https://bmi-calculator-by-isra.netlify.app/",
+      demoUrl: " https://tolemaicaweb.web.app/",
     },
-
     {
       id: 1,
       title: "Anita AI: The Future of AI-Powered Crypto Influence",
       shortDesc: "Anita AI is a cutting-edge AI-powered crypto influencer designed to redefine digital influence in the blockchain space. Built using Next.js, this fast, scalable, and interactive website showcases Anita AI's mission to bridge the gap between AI, crypto, and metaverse culture.",
       tags: ["Next.js", "Tailwind CSS", "Swiper.js"],
+      categories: ['client',  'nextjs', 'ui-design'],
       demoUrl: "https://itsanita.com/",
       thumbnail: "./Banners/Anita.png",
       videoUrl: "https://streamable.com/hr77eh"
@@ -65,10 +86,20 @@ function ProjectsPage() {
           desc: "Ensures compatibility across all screen sizes.."
         },
       ],
+      categories: ['client',  'nextjs', 'ui-design'],
       tags: ["Next.js", "Tailwind CSS", "Swiper.js"],
       demoUrl: "https://payshift.vercel.app/",
       thumbnail: "./Banners/payshift.png",
       videoUrl: "https://streamable.com/k1gd8e"
+    },
+    {
+      id: 12,
+      title: "React Context API - Language Switcher",
+      shortDesc: "This project is a simple yet effective implementation of React Context API, designed to allow dynamic language switching between English, Urdu, and French. The app ensures seamless text updates across components without the need for prop drilling, making it a great practice for state management in React.",
+      categories: ['practice', 'mini','personal','react','interactive'],
+      tags: ["React", "Context API", "useContext", "useState"],
+      thumbnail: "./Banners/lanSwitcher.png",
+      demoUrl: "https://language-switcher-pink.vercel.app/",
     },
     {
       id: 3,
@@ -92,6 +123,7 @@ function ProjectsPage() {
           desc: "Built with Tailwind CSS for a modern and intuitive design."
         },
       ],
+      categories: ['practice', 'react', 'web-apps', 'interactive', 'personal'],
       tags: ["React.js", "Tailwind CSS", "React Hooks"],
       thumbnail: "./Banners/passwordGenerator.png",
       videoUrl: "https://streamable.com/3m446v",
@@ -120,6 +152,7 @@ function ProjectsPage() {
           desc: "Utilizes React Hooks for smooth updates and state management."
         },
       ],
+      categories: ['practice', 'react', 'web-apps', 'interactive', 'personal'],
       tags: ["React", "Tailwind CSS", "API Integration"],
       thumbnail: "./Banners/currencyConverter.png",
       videoUrl: "https://streamable.com/lpupz6",
@@ -128,7 +161,7 @@ function ProjectsPage() {
     },
     {
       id: 5,
-      title: "Portfoli Using React/React Router",
+      title: "Portfolio Using React/React Router",
       shortDesc: "worked on a React Router project to enhance web navigation and create a seamless user experience! 🌐✨ This project allowed me to implement dynamic and nested routes, ensuring smooth page transitions while maintaining performance and structure.",
       features: [
         {
@@ -148,6 +181,7 @@ function ProjectsPage() {
           desc: "Ensured a smooth and intuitive page-switching experience without full reloads."
         },
       ],
+      categories: ['personal', 'react', 'ui-design', ],
       tags: ["React", "React Router", "Tailwind CSS"],
       thumbnail: "./Banners/ReactRouterProject.png",
       videoUrl: "https://streamable.com/dnu2s6",
@@ -176,6 +210,7 @@ function ProjectsPage() {
           desc: "Ensured a smooth and intuitive page-switching experience without full reloads."
         },
       ],
+      categories: ['practice', 'ui-design', 'personal'],
       tags: ["HTML", "Tailwind CSS"],
       thumbnail: "./Banners/businessly.png",
       videoUrl: "https://streamable.com/jza4p0",
@@ -204,6 +239,7 @@ function ProjectsPage() {
           desc: "Ensures an intuitive browsing experience."
         },
       ],
+      categories: ['practice', 'ui-design', 'mini'],
       tags: ["HTML5", "CSS3"],
       thumbnail: "./Banners/olx.png",
       videoUrl: "https://streamable.com/08wwqj",
@@ -232,7 +268,7 @@ function ProjectsPage() {
           desc: "Optimized for both desktop and mobile devices."
         },
       ],
-
+      categories: ['practice', 'javascript', 'web-apps', 'interactive'],
       tags: ["HTML5", "CSS3", "JavaScript"],
       thumbnail: "./Banners/todo.png",
       videoUrl: "https://streamable.com/frsenv",
@@ -256,9 +292,8 @@ function ProjectsPage() {
           heading: "User-Friendly UI",
           desc: "Clean and responsive design for a smooth experience."
         },
-
       ],
-
+      categories: ['practice', 'javascript', 'games', 'mini', 'interactive'],
       tags: ["HTML5", "CSS3", "JavaScript"],
       thumbnail: "./Banners/guessNumber.png",
       videoUrl: "https://streamable.com/xzc09s",
@@ -282,9 +317,8 @@ function ProjectsPage() {
           heading: "User-Friendly Interface ",
           desc: "Simple, clean, and responsive design."
         },
-
       ],
-
+      categories: ['practice', 'javascript', 'interactive', 'mini'],
       tags: ["HTML5", "CSS3", "JavaScript"],
       thumbnail: "./Banners/bmi.png",
       videoUrl: "https://streamable.com/t3kr6i",
@@ -293,6 +327,17 @@ function ProjectsPage() {
     },
   ];
 
+  // Filter projects based on active category
+  const filteredProjects = activeCategory === 'all' 
+    ? projects 
+    : projects.filter(project => project.categories && project.categories.includes(activeCategory));
+
+  // Handle category change
+  const handleCategoryChange = (categoryId) => {
+    setActiveCategory(categoryId);
+    setIsMobileMenuOpen(false); // Close mobile menu after selection
+  };
+
   return (
     <div className="bg-[#000319] text-white min-h-screen">
       <Header />
@@ -300,14 +345,88 @@ function ProjectsPage() {
       {/* Hero Section */}
       <PageHero headingWhite="My" headingPur="Project" desc="A collection of my recent web development projects, showcasing my skills in frontend technologies and responsive design." />
 
-      {/* Projects Grid */}
-      <section className="py-16">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((projectCard, index) => (
-              <ProjectCard project={projectCard} index={index} key={index} />
+      {/* Category Navigation */}
+      <div className="container mx-auto px-6 mt-8">
+        {/* Mobile Filter Toggle Button */}
+        {isMobile && (
+          <div className="mb-4">
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="w-full py-3 bg-gray-800 rounded-lg flex items-center justify-between px-4"
+            >
+              <span>Filter: {categories.find(c => c.id === activeCategory)?.name}</span>
+              <svg 
+                className={`w-5 h-5 transition-transform ${isMobileMenuOpen ? 'rotate-180' : ''}`} 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            
+            {/* Mobile Filter Dropdown */}
+            {isMobileMenuOpen && (
+              <div className="mt-2 bg-gray-800 rounded-lg overflow-hidden absolute z-10 w-[calc(100%-3rem)] max-h-64 overflow-y-auto">
+                {categories.map(category => (
+                  <button
+                    key={category.id}
+                    onClick={() => handleCategoryChange(category.id)}
+                    className={`w-full text-left px-4 py-3 transition-colors ${
+                      activeCategory === category.id
+                        ? 'bg-purple-600 text-white'
+                        : 'text-gray-300 hover:bg-gray-700'
+                    }`}
+                  >
+                    {category.name}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+        
+        {/* Desktop Filter Buttons */}
+        {!isMobile && (
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
+            {categories.map(category => (
+              <button
+                key={category.id}
+                onClick={() => setActiveCategory(category.id)}
+                className={`px-4 py-2 rounded-full transition-all duration-300 ${
+                  activeCategory === category.id
+                    ? 'bg-purple-600 text-white'
+                    : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                }`}
+              >
+                {category.name}
+              </button>
             ))}
           </div>
+        )}
+      </div>
+
+      {/* Projects Grid */}
+      <section className="py-8">
+        <div className="container mx-auto px-6">
+          {filteredProjects.length > 0 ? (
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              {filteredProjects.map((projectCard, index) => (
+                <ProjectCard project={projectCard} index={index} key={index} />
+              ))}
+            </motion.div>
+          ) : (
+            <div className="text-center py-16">
+              <h3 className="text-2xl font-semibold">No projects found in this category</h3>
+              <p className="mt-2 text-gray-400">Try selecting a different category</p>
+            </div>
+          )}
         </div>
       </section>
 
