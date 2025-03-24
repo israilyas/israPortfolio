@@ -13,13 +13,14 @@ function ProjectsPage() {
     { id: 'react', name: 'React Projects' },
     { id: 'nextjs', name: 'Next.js Projects' },
     { id: 'ui-design', name: 'UI Design' },
-    { id: 'web-apps', name: 'Web Applications' },
-    { id: 'personal', name: 'Personal Projects' },
-    { id: 'mini', name: 'Mini Projects' },
+    // { id: 'web-apps', name: 'Web Applications' },
+    // { id: 'personal', name: 'Personal Projects' },
+    { id: 'clone', name: 'Clone Projects' },
+    // { id: 'mini', name: 'Mini Projects' },
     { id: 'javascript', name: 'JavaScript Projects' },
     { id: 'interactive', name: 'Interactive Tools' },
     { id: 'games', name: 'Games' },
-    { id: 'practice', name: 'Practice Projects' }
+    // { id: 'practice', name: 'Practice Projects' }
   ];
 
   // State for active category and mobile menu visibility
@@ -49,7 +50,7 @@ function ProjectsPage() {
       id: 11,
       title: "Tolemaica - Certified Media Protection Website",
       shortDesc: "Developed a fast, modern, and responsive website for Tolemaica, an Italian startup specializing in legal certification of media. The site enhances user experience with seamless navigation and an intuitive UI.",
-      categories: ['client', 'ui-design'],
+      categories: ['client', 'ui-design','react'],
       tags: ["React", "Tailwind", "Swiper.js"],
       thumbnail: "./Banners/tolemaica.png",
       demoUrl: " https://tolemaicaweb.web.app/",
@@ -92,6 +93,16 @@ function ProjectsPage() {
       thumbnail: "./Banners/payshift.png",
       videoUrl: "https://streamable.com/k1gd8e"
     },
+    {
+      id: 13,
+      title: "Theme Switcher – Light & Dark Mode Toggle",
+      shortDesc: "This Theme Switcher project is built using React Context API, allowing users to switch between light and dark mode seamlessly. The theme selection is stored in localStorage, ensuring that user preferences persist even after a page refresh. This project demonstrates efficient state management and enhances the user experience by dynamically applying themes across components.",
+      categories: ['practice', 'mini','personal','react','interactive'],
+      tags: ["React", "Context API", "useContext", "useState"],
+      thumbnail: "./Banners/themeSwitcher.png",
+      demoUrl: "https://50-days-of-react.vercel.app/",
+    },
+   
     {
       id: 12,
       title: "React Context API - Language Switcher",
@@ -210,7 +221,7 @@ function ProjectsPage() {
           desc: "Ensured a smooth and intuitive page-switching experience without full reloads."
         },
       ],
-      categories: ['practice', 'ui-design', 'personal'],
+      categories: ['practice', 'ui-design', 'personal','clone'],
       tags: ["HTML", "Tailwind CSS"],
       thumbnail: "./Banners/businessly.png",
       videoUrl: "https://streamable.com/jza4p0",
@@ -239,7 +250,7 @@ function ProjectsPage() {
           desc: "Ensures an intuitive browsing experience."
         },
       ],
-      categories: ['practice', 'ui-design', 'mini'],
+      categories: ['practice', 'ui-design', 'mini','clone'],
       tags: ["HTML5", "CSS3"],
       thumbnail: "./Banners/olx.png",
       videoUrl: "https://streamable.com/08wwqj",
@@ -349,7 +360,7 @@ function ProjectsPage() {
       <div className="container mx-auto px-6 mt-8">
         {/* Mobile Filter Toggle Button */}
         {isMobile && (
-          <div className="mb-4">
+          <div className="mb-4 z-50">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="w-full py-3 bg-gray-800 rounded-lg flex items-center justify-between px-4"
@@ -368,7 +379,7 @@ function ProjectsPage() {
             
             {/* Mobile Filter Dropdown */}
             {isMobileMenuOpen && (
-              <div className="mt-2 bg-gray-800 rounded-lg overflow-hidden absolute z-10 w-[calc(100%-3rem)] max-h-64 overflow-y-auto">
+              <div className="mt-2 bg-gray-800 rounded-lg overflow-hidden absolute w-[calc(100%-3rem)] max-h-64 overflow-y-auto z-50">
                 {categories.map(category => (
                   <button
                     key={category.id}
