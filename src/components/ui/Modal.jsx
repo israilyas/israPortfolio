@@ -98,12 +98,12 @@ const VideoModal = ({ isOpen, videoUrl, onClose, project }) => {
                         {/* Video Section with loading state */}
                         <div className="relative flex flex-col justify-center items-center w-full md:w-[60%] h-64 sm:h-80 md:h-full flex-shrink-0 bg-black/30 overflow-hidden">
                             {/* Gradient overlay for video border */}
-                            <div className="absolute inset-0 p-[1px] rounded-l-xl overflow-hidden z-10 pointer-events-none">
+                            {/* <div className="absolute inset-0 p-[1px] rounded-l-xl overflow-hidden z-10 pointer-events-none">
                                 <div className="absolute inset-0 rounded-l-xl" style={{
                                     background: 'linear-gradient(135deg, #A78BFA 0%, transparent 50%, transparent 100%)',
                                     opacity: 0.4
                                 }} />
-                            </div>
+                            </div> */}
 
                             {/* Loading state */}
                             {isLoading && (
