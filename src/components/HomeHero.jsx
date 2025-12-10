@@ -71,9 +71,9 @@ function HomeHero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
-                className="text-gray-300 mb-8 max-w-2xl mx-auto"
+                className="text-gray-300 mb-8 max-w-2xl mx-auto text-center"
               >
-               I develop clean, fast, and responsive websites using WordPress and the MERN stack, focusing on smooth user experiences and custom features. Alongside development, I’m learning SEO and blogging to build projects that not only look great but also rank well and reach real users.
+              I develop clean, fast, and responsive websites using WordPress and the MERN stack, focusing on smooth user experiences. I’m also learning SEO and blogging to build projects that rank well and reach real users.
               </motion.p>
 
               <motion.div
