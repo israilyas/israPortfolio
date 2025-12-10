@@ -47,7 +47,7 @@ const Explore = () => {
                         </div>
                         <h3 className="text-lg font-semibold mb-2">About Me</h3>
                         <p className="text-gray-400 text-sm mb-4">
-                            Learn more about my background, experience, and what motivates me as a developer.
+                           Discover my journey as a WordPress Developer, MERN Stack Developer, and SEO learner. Learn how my skills, experience, and motivation shape the digital solutions I create.
                         </p>
                         <Link to="/about" className="text-[#A78BFA] text-sm font-medium hover:underline flex items-center">
                             Read More
@@ -73,7 +73,7 @@ const Explore = () => {
                         </div>
                         <h3 className="text-lg font-semibold mb-2">My Skills</h3>
                         <p className="text-gray-400 text-sm mb-4">
-                            Explore my technical skills, tools, and areas of expertise in frontend development.
+                            See the technologies, tools, and areas I work with — from WordPress and MERN development to SEO and content strategy.
                         </p>
                         <Link to="/skills" className="text-[#A78BFA] text-sm font-medium hover:underline flex items-center">
                             View Skills
@@ -99,7 +99,7 @@ const Explore = () => {
                         </div>
                         <h3 className="text-lg font-semibold mb-2">My Projects</h3>
                         <p className="text-gray-400 text-sm mb-4">
-                            Check out my portfolio of web projects, applications, and development work.
+                           Explore the websites, applications, and real-world projects I’ve built. Each project reflects practical problem-solving and clean, user-focused design.
                         </p>
                         <Link to="/projects" className="text-[#A78BFA] text-sm font-medium hover:underline flex items-center">
                             Browse Projects

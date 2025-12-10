@@ -36,7 +36,7 @@ function HomeHero() {
                 transition={{ duration: 0.5 }}
                 className="text-sm tracking-wide text-gray-400 uppercase mb-4"
               >
-                Frontend Development Specialist
+                Full Stack Developer & SEO Specialist
               </motion.p>
 
               <motion.h1
@@ -71,10 +71,11 @@ function HomeHero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
-                className="text-gray-300 mb-8 max-w-2xl mx-auto"
+                className="text-gray-300 mb-8 max-w-2xl mx-auto text-center"
               >
-                I create responsive web applications with modern tools and frameworks.
-                Currently working remotely and passionate about building exceptional digital experiences.
+               I build clean, fast, and responsive websites using WordPress and the MERN stack. I enjoy creating smooth user experiences, customizing features, and turning ideas into functional digital products.
+              <br /><br />
+              Along with development, I’m learning SEO, blogging, and digital marketing so I can create projects that not only look good but also rank well and attract real users.
               </motion.p>
 
               <motion.div

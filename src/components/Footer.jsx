@@ -15,8 +15,7 @@ function Footer() {
               <span className="text-[#A78BFA]">.dev</span>
             </Link>
             <p className="text-gray-400 max-w-md">
-              A passionate frontend developer specializing in creating responsive and interactive web applications.
-              Currently available for remote work and exciting collaboration opportunities.
+             A passionate MERN stack and WordPress developer focused on building responsive, user-friendly web applications. Eager to take on remote projects and collaborate on meaningful digital experiences. Always learning SEO to create websites that perform and grow.
             </p>
            <SocalLinks/>
           </div>
@@ -49,7 +48,7 @@ function Footer() {
                 <svg className="w-5 h-5 mt-0.5 text-[#A78BFA]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <span>israqureshi138@gmail.com</span>
+                <span>israilyas754@gmail.com</span>
               </li>
               {/* <li className="flex items-start space-x-3 text-gray-400">
                 <svg className="w-5 h-5 mt-0.5 text-[#A78BFA]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
